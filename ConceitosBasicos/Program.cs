@@ -1,7 +1,7 @@
-﻿int idade = 18;
-Console.WriteLine("A idade é " + idade);
-if (idade >= 18)
-    Console.WriteLine("você pode tirar habilitação");
+﻿Console.WriteLine("Informe seu nome: ");
+string nome = Console.ReadLine();
+Console.WriteLine("Informe seu salário: ");
+decimal salarioStr = decimal.Parse (Console.ReadLine());
 
-else
-    Console.WriteLine("você não pode tirar habilitação");
+// Console.WriteLine("Bem-vinda {0}, o salário de {1}", nome, salarioStr);
+Console.WriteLine($"Bem-vinda {nome}, seu salário é de {salarioStr}");
