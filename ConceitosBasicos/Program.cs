@@ -1,4 +1,6 @@
-﻿using System.Linq.Expressions;
+﻿/*
+
+using System.Linq.Expressions;
 try
 {
     Console.WriteLine("Informe seu nome: ");
@@ -50,5 +52,14 @@ catch (Exception e) //qualquer tipo de erro
 {
     Console.WriteLine("Ocorreu um erro. Informe ao suporte técnico");
     Console.WriteLine(e.StackTrace);
-}
 
+
+*/
+
+using ConceitosBasicos.uteis;
+
+SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
+int resultado = somaDoisNumeros.Somar(20, 22);
+Console.WriteLine(resultado);
+
+int milimetros = MetrosMilimetros.Converter(2);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
