@@ -14,24 +14,24 @@ if (salario <= 2259.20m)
 }
 else if  (salario >= 2259.21m &&  salario <= 2826.65m)
 {
-    decimal novoSalario = salario - (salario * 0.075m);
+    decimal novoSalario = salario - (salario * 0.075m - 169.21m);
     Console.WriteLine($"Seu sálário com o desconto é de {novoSalario:C2}");
 }
 
 else if (salario >= 2826.66m && salario <= 3751.05m)
 {
-    decimal novoSalario = salario - (salario * 0.15m);
+    decimal novoSalario = salario - (salario * 0.15m-381.44m);
     Console.WriteLine($"Seu salário com o desconto é de {novoSalario:C2}");
 }
 
 else if (salario >= 3751.06m && salario <= 4664.68m)
 {
-    decimal novoSalario = salario - (salario * 0.225m);
+    decimal novoSalario = salario - (salario * 0.225m- 662.67m);
     Console.WriteLine($"Seu salário com o desconto é de {novoSalario:C2}");
 }
 
 else
 {
-    decimal novoSalario = salario - (salario * 0.275m);
+    decimal novoSalario = salario - (salario * 0.275m - 896m);
     Console.WriteLine($"Seu salário com o desconto é de {novoSalario:C2}");
 }
