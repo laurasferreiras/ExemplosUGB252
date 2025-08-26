@@ -67,59 +67,70 @@ int milimetros = MetrosMilimetros.Converter(2);
 */
 
 using ConceitosBasicos.uteis;
+int escolha;
 
-Console.WriteLine("o que vc deseja fazer: ");
-Console.WriteLine("1 - somar dois números \n2 - converter de metros para milímetros \n3 - calcular aumento \n4 - calcular desconto");
-int escolha = int.Parse(Console.ReadLine());
+do
+{
+    Console.WriteLine(" ");
+    Console.WriteLine("o que vc deseja fazer: ");
+    Console.WriteLine("0 - sair \n1 - somar dois números \n2 - converter de metros para milímetros \n3 - calcular aumento \n4 - calcular desconto");
+    escolha = int.Parse(Console.ReadLine());
 
-switch (escolha){
-    case 1:
-        SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
-        Console.WriteLine("número 1: ");
-        int numero1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("número 2: ");
-        int numero2 = int.Parse(Console.ReadLine());
-        int resultado = somaDoisNumeros.Somar(numero1, numero2);
-        Console.WriteLine($"o resultado da soma é de {resultado}");
-        break;
+    switch (escolha)
+    {
+        case 1:
+            SomaDoisNumeros somaDoisNumeros = new SomaDoisNumeros();
+            Console.WriteLine("número 1: ");
+            int numero1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("número 2: ");
+            int numero2 = int.Parse(Console.ReadLine());
+            int resultado = somaDoisNumeros.Somar(numero1, numero2);
+            Console.WriteLine($"o resultado da soma é de {resultado}");
+            break;
 
-     case 2:
-        MetrosMilimetros metrosMilimetros = new MetrosMilimetros();
-        Console.WriteLine("metros a serem convertidos: ");
-        int metros = int.Parse(Console.ReadLine());
-        int milimetros = MetrosMilimetros.Converter(metros);
-        Console.WriteLine($"milimetros: {milimetros}");
-        break;
+        case 2:
+            MetrosMilimetros metrosMilimetros = new MetrosMilimetros();
+            Console.WriteLine("metros a serem convertidos: ");
+            int metros = int.Parse(Console.ReadLine());
+            int milimetros = MetrosMilimetros.Converter(metros);
+            Console.WriteLine($"milimetros: {milimetros}");
+            break;
 
-     case 3:
-        CalculaAumento calculaAumento = new CalculaAumento();
+        case 3:
+            CalculaAumento calculaAumento = new CalculaAumento();
 
-        Console.WriteLine("salário: ");
-        decimal salario = Convert.ToDecimal(Console.ReadLine());
+            Console.WriteLine("salário: ");
+            decimal salario = Convert.ToDecimal(Console.ReadLine());
 
-        Console.WriteLine("aumento: ");
-        float aumento = float.Parse(Console.ReadLine());
+            Console.WriteLine("aumento: ");
+            float aumento = float.Parse(Console.ReadLine());
 
-        decimal novoSalario = calculaAumento.Calcular(salario, aumento) + salario;
-        decimal valorAumento = calculaAumento.Calcular(salario, aumento);
+            decimal novoSalario = calculaAumento.Calcular(salario, aumento) + salario;
+            decimal valorAumento = calculaAumento.Calcular(salario, aumento);
 
-        Console.WriteLine($"valor do antigo salario: {salario:c2}, o aumento de {valorAumento:f2}\nvalor do novo salario: {novoSalario:c2}");
-        break;
+            Console.WriteLine($"valor do antigo salario: {salario:c2}, o aumento de {valorAumento:f2}\nvalor do novo salario: {novoSalario:c2}");
+            break;
 
-    case 4:
-        CalculaDesconto calculaDesconto = new CalculaDesconto();
-        Console.WriteLine("valor da mercadoria: ");
-        decimal mercadoria = decimal.Parse(Console.ReadLine());
+        case 4:
+            CalculaDesconto calculaDesconto = new CalculaDesconto();
+            Console.WriteLine("valor da mercadoria: ");
+            decimal mercadoria = decimal.Parse(Console.ReadLine());
 
-        Console.WriteLine("desconto: ");
-        float desconto = float.Parse(Console.ReadLine());
+            Console.WriteLine("desconto: ");
+            float desconto = float.Parse(Console.ReadLine());
 
-        decimal valorDesconto = calculaDesconto.Descontar(mercadoria, desconto);
-        decimal novoValor = mercadoria - calculaDesconto.Descontar(mercadoria, desconto);
+            decimal valorDesconto = calculaDesconto.Descontar(mercadoria, desconto);
+            decimal novoValor = mercadoria - calculaDesconto.Descontar(mercadoria, desconto);
 
-        Console.WriteLine($"valor antigo: {mercadoria} \nvalor do desconto: {valorDesconto} \nvalor com o desconto: {novoValor}");
-        break;
-    
-}
+            Console.WriteLine($"valor antigo: {mercadoria} \nvalor do desconto: {valorDesconto} \nvalor com o desconto: {novoValor}");
+            break;
 
+        case 0:
+            Console.WriteLine("saindo...");
+            break;
 
+        default:
+            Console.WriteLine("opção inválida");
+            break;
+    }
+} while (escolha != 0);
