@@ -73,7 +73,7 @@ do
 {
     Console.WriteLine(" ");
     Console.WriteLine("o que vc deseja fazer: ");
-    Console.WriteLine("0 - sair \n1 - somar dois números \n2 - converter de metros para milímetros \n3 - calcular aumento \n4 - calcular desconto");
+    Console.WriteLine("0 - sair \n1 - somar dois números \n2 - converter de metros para milímetros \n3 - calcular aumento \n4 - calcular desconto \n5 - calcular aluguel de carro");
     escolha = int.Parse(Console.ReadLine());
 
     switch (escolha)
@@ -123,6 +123,17 @@ do
             decimal novoValor = mercadoria - calculaDesconto.Descontar(mercadoria, desconto);
 
             Console.WriteLine($"valor antigo: {mercadoria} \nvalor do desconto: {valorDesconto} \nvalor com o desconto: {novoValor}");
+            break;
+
+        case 5:
+            AluguelCarro aluguelCarro = new AluguelCarro();
+            Console.WriteLine("informe os dias alugados: ");
+            int dias = int.Parse(Console.ReadLine());
+            Console.WriteLine("informe o km inicial: ");
+            decimal km_inicio = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("informe o km final: ");
+            decimal km_fim = decimal.Parse(Console.ReadLine());
+            Console.WriteLine($"dias alugados: {dias} \nkm total percorrido: {km_fim - km_inicio} \nvalor total a pagar: {aluguelCarro.Aluguel(dias, km_inicio, km_fim):c2}");
             break;
 
         case 0:
