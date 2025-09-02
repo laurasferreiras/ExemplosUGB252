@@ -73,7 +73,7 @@ do
 {
     Console.WriteLine(" ");
     Console.WriteLine("o que vc deseja fazer: ");
-    Console.WriteLine("0 - sair \n1 - somar dois números \n2 - converter de metros para milímetros \n3 - calcular aumento \n4 - calcular desconto \n5 - calcular aluguel de carro");
+    Console.WriteLine("0 - sair \n1 - somar dois números \n2 - converter de metros para milímetros \n3 - calcular aumento \n4 - calcular desconto \n5 - calcular aluguel de carro \n 6 - calcular imc");
     escolha = int.Parse(Console.ReadLine());
 
     switch (escolha)
@@ -134,6 +134,15 @@ do
             Console.WriteLine("informe o km final: ");
             decimal km_fim = decimal.Parse(Console.ReadLine());
             Console.WriteLine($"dias alugados: {dias} \nkm total percorrido: {km_fim - km_inicio} \nvalor total a pagar: {aluguelCarro.Aluguel(dias, km_inicio, km_fim):c2}");
+            break;
+
+        case 6:
+            CalcularIMC calcularIMC = new CalcularIMC();
+            Console.WriteLine("informe seu peso: ");
+            decimal peso = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("informe sua altura");
+            decimal altura = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("informe seu genero: f para feminino, m para masculino");
             break;
 
         case 0:
